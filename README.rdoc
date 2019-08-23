@@ -1,0 +1,32 @@
+= rubyXL-rails 
+
+A gem to generate xlsx documents by using rxlsx templates.
+
+Based on {atog}[http://github.com/atog]'s {spreadsheet_on_rails plugin}[https://github.com/atog/spreadsheet_on_rails].
+
+== Installation
+
+Add this to your Gemfile and run the +bundle+ command.
+
+  gem "rubyXL-rails"
+
+== Getting Started
+
+Add support for the new format in your controller:
+
+  class HomeController < ApplicationController
+
+    def index
+      respond_to do |format|
+        format.html
+        format.xlsx { render :xlsx => "<filename>"}
+      end
+    end
+  end
+
+Create an xlsx view +app/views/home/index.rxlsx+:
+
+
+The view basically allow you to write directly with the +rubyXL+ gem.
+
+Copyright (c) 2019 sramos, 2012 10to1; released under the MIT license
