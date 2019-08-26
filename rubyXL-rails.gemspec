@@ -1,9 +1,12 @@
 $:.push File.expand_path("../lib", __FILE__)
 
+# Maintain gem's version:
+require "rubyXL-rails/version"
+
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "rubyXL-rails"
-  s.version     = "0.1" 
+  s.version     = RubyXL::Rails::VERSION 
   s.authors     = ["Santiago Ramos"]
   s.email       = ["sramos@oei.es"]
   s.homepage    = "https://github.com/sramos/rubyXL-rails"
