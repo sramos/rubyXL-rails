@@ -2,7 +2,8 @@ module RubyXL
   module Rails 
     def self.render_xlsx_string(spreadsheet)
 <<RENDER
-      workbook = RubyXL::Parser.parse_buffer(spreadsheet)
+      workbook = RubyXL::Workbook.new
+      #{spreadsheet}
       workbook.stream
 RENDER
     end
@@ -13,13 +14,7 @@ end
 require "action_view/template"
 require 'rubyXL'
 ActionView::Template.register_template_handler :rxlsx, lambda { |template|
-  rubyXL::Rails.render_xlsx_string(template.source)
-}
-
-# Why doesn't the above template handler catch this one as well?
-# Added for backwards compatibility.
-ActionView::Template.register_template_handler :"xlsx.rxlsx", lambda { |template|
-  rubyXL::Rails.render_xlsx_string(template.source)
+  RubyXL::Rails.render_xlsx_string(template.source)
 }
 
 # Adds support for `format.xlsx`
