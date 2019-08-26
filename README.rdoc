@@ -2,7 +2,7 @@
 
 A gem to generate xlsx documents by using rxlsx templates.
 
-Based on {atog}[http://github.com/atog]'s {spreadsheet_on_rails plugin}[https://github.com/atog/spreadsheet_on_rails].
+Based on {atog}[https://github.com/atog]'s {spreadsheet_on_rails plugin}[https://github.com/atog/spreadsheet_on_rails].
 
 == Installation
 
@@ -27,6 +27,6 @@ Add support for the new format in your controller:
 Create an xlsx view +app/views/home/index.rxlsx+:
 
 
-The view basically allow you to write directly with the +rubyXL+ gem.
+The view basically allow you to write directly with the {rubyXL}[https://github.com/weshatheleopard/rubyXL] gem.
 
 Copyright (c) 2019 sramos, 2012 10to1; released under the MIT license
