@@ -13,8 +13,8 @@ end
 # Setups the template handling
 require "action_view/template"
 require 'rubyXL'
-ActionView::Template.register_template_handler :rxlsx, lambda { |template|
-  RubyXL::Rails.render_xlsx_string(template.source)
+ActionView::Template.register_template_handler :rxlsx, lambda { |template, source|
+  RubyXL::Rails.render_xlsx_string(source)
 }
 
 # Adds support for `format.xlsx`
